@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🤖 Awesome Free AI APIs</title>
+  <meta name="description" content="Curated list of the best Free Tier AI APIs for Vibe Coders and Developers">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+    .header { background: linear-gradient(135deg, #1e3a5f, #0f172a); padding: 40px 20px; text-align: center; border-bottom: 3px solid #8b5cf6; }
+    .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .header p { font-size: 1.1rem; color: #94a3b8; max-width: 700px; margin: 0 auto; }
+    .stats { display: flex; justify-content: center; gap: 30px; margin: 20px auto; flex-wrap: wrap; }
+    .stat-card { background: #1e293b; padding: 20px 30px; border-radius: 12px; text-align: center; min-width: 150px; border: 1px solid #334155; }
+    .stat-card .number { font-size: 2rem; font-weight: bold; }
+    .stat-card .label { font-size: 0.9rem; color: #94a3b8; margin-top: 5px; }
+    .stat-card.live .number { color: #22c55e; }
+    .stat-card.dead .number { color: #ef4444; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .category { margin-bottom: 30px; }
+    .category h2 { font-size: 1.5rem; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #334155; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #1e293b; }
+    th { background: #1e293b; font-weight: 600; }
+    tr:hover { background: #1e293b; }
+    a { color: #8b5cf6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { text-align: center; padding: 30px; color: #64748b; border-top: 1px solid #1e293b; margin-top: 40px; }
+    @media (max-width: 768px) { .header h1 { font-size: 1.8rem; } table { font-size: 0.85rem; } }
+  </style>
+  <meta http-equiv="refresh" content="300">
+</head>
+<body>
+  <div class="header">
+    <h1>🤖 Awesome Free AI APIs</h1>
+    <p>Curated list of the best Free Tier AI APIs for Vibe Coders and Developers.</p>
+    <div style="margin-top: 15px;">
+      <a href="https://github.com/pnnnhan99/awesome-free-ai-apis"><img src="https://img.shields.io/badge/View_on_GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+      <a href="https://github.com/pnnnhan99/awesome-free-ai-apis"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"></a>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat-card"><div class="number" id="total">Loading...</div><div class="label">Total APIs</div></div>
+    <div class="stat-card live"><div class="number" id="live">-</div><div class="label">🟢 Online</div></div>
+    <div class="stat-card dead"><div class="number" id="dead">-</div><div class="label">🔴 Offline</div></div>
+  </div>
+  <div class="container" id="content">Loading...</div>
+  <div class="footer">
+    <p>Made with 💜 by the Awesome Free AI APIs community</p>
+    <p id="last-updated"></p>
+  </div>
+  <script>
+    fetch('https://raw.githubusercontent.com/pnnnhan99/awesome-free-ai-apis/main/data/ai-apis.json')
+      .then(r => r.json())
+      .then(apis => {
+        const total = apis.length;
+        document.getElementById('total').textContent = total;
+        document.getElementById('last-updated').textContent = 'Last updated: ' + new Date().toLocaleString('en-US', {timeZone: 'Asia/Ho_Chi_Minh'});
+        const groups = {};
+        for (const a of apis) {
+          if (!groups[a.category]) groups[a.category] = [];
+          groups[a.category].push(a);
+        }
+        let html = '<p style="text-align:center;padding:40px;color:#94a3b8;">View full list at <a href="https://github.com/pnnnhan99/awesome-free-ai-apis/blob/main/README.md">README.md</a></p>';
+        for (const [cat, items] of Object.entries(groups)) {
+          html += `<h2 id="${slug(cat)}">${cat} (${items.length})</h2>`;
+          html += '<table><tr><th>API</th><th>Free Tier</th><th>Need CC?</th></tr>';
+          for (const t of items) {
+            html += `<tr><td><a href="${t.url}" target="_blank">${t.name}</a></td><td>${t.freeTier}</td><td>${t.requireCC}</td></tr>`;
+          }
+          html += '</table>';
+        }
+        document.getElementById('content').innerHTML = html;
+      })
+      .catch(() => { document.getElementById('content').innerHTML = '<p style="text-align:center;color:#ef4444;">Failed to load data.</p>'; });
+
+    function slug(text) {
+      return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+  </script>
+</body>
+</html>
