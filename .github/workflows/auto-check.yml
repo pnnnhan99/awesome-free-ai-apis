@@ -2,7 +2,7 @@ name: Auto Check AI API Status
 
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "0 17 * * *"
   push:
     branches: [main]
 
