@@ -48,7 +48,7 @@ jobs:
       - name: Commit and push changes
         if: steps.detect-changes.outputs.changes == 'true'
         run: |
-          git config user.name "pnnnhan99"
+          git config user.name "GitHub Actions Bot"
           git config user.email "nnhann99@gmail.com"
           git add README.md
           git commit -m "chore: sync ai apis status"
