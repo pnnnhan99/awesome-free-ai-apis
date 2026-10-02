@@ -1,7 +1,7 @@
 # 🤖 Awesome Free AI APIs
 
 [![Total APIs](https://img.shields.io/badge/Total_APIs-10-blue?style=for-the-badge)](https://github.com/pnnnhan99/awesome-free-ai-apis)
-[![Online](https://img.shields.io/badge/Online-10-brightgreen?style=for-the-badge)](https://github.com/pnnnhan99/awesome-free-ai-apis)
+[![Online](https://img.shields.io/badge/Online-9-brightgreen?style=for-the-badge)](https://github.com/pnnnhan99/awesome-free-ai-apis)
 [![Auto Update](https://img.shields.io/badge/Auto_Update-Active-purple?style=for-the-badge&logo=github-actions)](https://github.com/pnnnhan99/awesome-free-ai-apis)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -14,9 +14,9 @@
 | Metric | Value |
 |---|---|
 | Total APIs | 10 |
-| 🟢 Online | 10 |
-| 🔴 Offline | 0 |
-| Last Updated | 10/1/2026, 9:45:30 AM (GMT+7) |
+| 🟢 Online | 9 |
+| 🔴 Offline | 1 |
+| Last Updated | 10/2/2026, 11:36:48 AM (GMT+7) |
 
 ---
 
@@ -34,7 +34,7 @@
 
 | AI API (Linked) | Free Tier Details | Requires Credit Card? | Website Status |
 |---|---|---|---|
-| [Google Gemini API](https://aistudio.google.com/) | 15 RPM (Requests Per Minute), 1 million tokens/minute | No 🟢 | 🟢 Online |
+| [Google Gemini API](https://aistudio.google.com/) | 15 RPM (Requests Per Minute), 1 million tokens/minute | No 🟢 | 🔴 Offline |
 | [Groq](https://console.groq.com/) | Up to 14,400 requests/day (Super fast) | No 🟢 | 🟢 Online |
 | [Cohere](https://cohere.com/) | 1000 calls/month (Non-commercial use) | No 🟢 | 🟢 Online |
 | [Together AI](https://www.together.ai/) | $5 free credit on signup | No 🟢 | 🟢 Online |
@@ -90,5 +90,5 @@
 </p>
 
 <p align="center">
-  🕐 Last updated: 10/1/2026, 9:45:30 AM
+  🕐 Last updated: 10/2/2026, 11:36:48 AM
 </p>
